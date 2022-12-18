@@ -24,14 +24,16 @@ function GenerateBtn(but_numb) {
 	}
 	document.getElementById("inner_buttons").innerHTML = buttons
 }
-// initial generation of buttons
+let luckyNr
+// initial generation of buttons and lucky number
 window.onload = function() {
   GenerateBtn(number)
+  luckyNr = luckyNumber()
 };
 // function for guessing the lucky number
 function Guess(n) {
-	console.log(n + " " + luckyNumber())
-	return n == luckyNumber() ? 
+	console.log(n + " " + luckyNr)
+	return n == luckyNr ? 
 		window.alert("You guessed it right\nCongratulations!") :
 		window.alert("You guessed wrong\nTry Again!")
 }
